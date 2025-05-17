@@ -1,11 +1,14 @@
-import React from 'react'
 
 function HeroSection() {
   return (
     <div>
-        <img src="https://static.vecteezy.com/system/resources/previews/004/299/835/original/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg" alt="" />
+      <img
+        src="https://urahara-store.com/cdn/shop/collections/new-arrivals-173405.jpg?v=1737614296"
+        alt=""
+        className="h-1/2 w-full object-cover"
+      />
     </div>
-  )
+  );
 }
 
-export default HeroSection
+export default HeroSection;
