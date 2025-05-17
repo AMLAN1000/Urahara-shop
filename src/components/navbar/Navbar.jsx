@@ -9,10 +9,10 @@ import { useSelector } from 'react-redux';
 
 // List of admin emails with access to dashboard
 const ADMIN_EMAILS = [
-  'amlan@edsparkle.com',
-  'knupadhyay784@gmail.com',
-  'kisuke@urahara.com',
-  'manager@uraharashop.com'
+  'amlan@urahara.com',
+    'rakib@urahara.com',
+    'anika@urahara.com',
+    'safaeat@urahara.com',
 ];
 
 function Navbar() {

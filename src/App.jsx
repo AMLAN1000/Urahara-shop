@@ -67,9 +67,10 @@ export const ProtectedRoutesForAdmin = ({ children }) => {
 
   // List of hardcoded admin emails
   const adminEmails = [
-    'knupadhyay784@gmail.com',
-    'amlan@edsparkle.com',
-    'admin@example.com',
+    'amlan@urahara.com',
+    'rakib@urahara.com',
+    'anika@urahara.com',
+    'safaeat@urahara.com',
   ];
 
   if (admin && adminEmails.includes(admin.user.email)) {

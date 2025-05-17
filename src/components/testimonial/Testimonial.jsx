@@ -1,49 +1,86 @@
-import React, { useContext } from 'react'
-import myContext from '../../context/data/myContext'
+import React, { useContext } from 'react';
+import myContext from '../../context/data/myContext';
 
 function Testimonial() {
-    const context = useContext(myContext);
-    const { mode } = context;
-    return (
-        <div>
-            <section className=''>
-                <div className=" container mx-auto px-5 py-10">
-                    <h1 className=' text-center text-3xl font-bold text-black' style={{ color: mode === 'dark' ? 'white' : '' }}>Testimonial</h1>
-                    <h2 className=' text-center text-2xl font-semibold mb-10' style={{ color: mode === 'dark' ? 'white' : '' }}>What our <span className=' text-pink-500'>customers</span> are saying</h2>
-                    <div className="flex flex-wrap -m-4">
-                        <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
-                            <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://ecommerce-sk.vercel.app/img/kamal.png" />
-                                <p style={{ color: mode === 'dark' ? 'white' : '' }} className="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
-                                <h2 style={{ color: mode === 'dark' ? '#ff4162' : '' }} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">Kamal Nayan Upadhyay</h2>
-                                <p style={{ color: mode === 'dark' ? 'white' : '' }} className="text-gray-500">Senior Product Designer</p>
-                            </div>
-                        </div>
+  const context = useContext(myContext);
+  const { mode } = context;
 
-                        <div className="lg:w-1/3 lg:mb-0 mb-6 p-4">
-                            <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://cdn-icons-png.flaticon.com/128/2763/2763444.png" />
-                                <p  style={{color: mode === 'dark' ? 'white' : ''}}className="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
-                                <h2 style={{color: mode === 'dark' ? '#ff4162' : ''}} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">React Js</h2>
-                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="text-gray-500">UI Develeoper</p>
-                            </div>
-                        </div>
-                        <div className="lg:w-1/3 lg:mb-0 p-4">
-                            <div className="h-full text-center">
-                                <img alt="testimonial" className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="https://webknudocs.vercel.app/logo/react.png" />
-                                <p style={{color: mode === 'dark' ? 'white' : ''}} className="leading-relaxed">Edison bulb retro cloud bread echo park, helvetica stumptown taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
-                                <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
-                                <h2 style={{color: mode === 'dark' ? '#ff4162' : ''}} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">React Js</h2>
-                                <p  style={{color: mode === 'dark' ? 'white' : ''}}className="text-gray-500">CTO</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  const testimonials = [
+    {
+      name: 'Aiko Tanaka',
+      role: 'Fashion Enthusiast',
+      image: 'https://randomuser.me/api/portraits/women/68.jpg',
+      text: 'I absolutely love shopping from Urahara Shop! The quality of the clothes is amazing, and their anime-inspired collection is just what I’ve always looked for. Definitely my go-to store now!',
+    },
+    {
+      name: 'Kenta Yamamoto',
+      role: 'Digital Artist',
+      image: 'https://randomuser.me/api/portraits/men/45.jpg',
+      text: 'The customer service is top-notch and the designs are straight out of my favorite series. I wore a shirt from Urahara Shop to a convention and got so many compliments!',
+    },
+    {
+      name: 'Miyu Asano',
+      role: 'Cosplayer',
+      image: 'https://randomuser.me/api/portraits/women/32.jpg',
+      text: 'Urahara Shop delivers the perfect mix of casual fashion and otaku vibes. I ordered a hoodie last month and it’s still my favorite piece. Highly recommended!',
+    },
+  ];
+
+  return (
+    <div className={`${mode === 'dark' ? 'bg-[#0e0e0e]' : 'bg-pink-50'} py-16`}>
+      <section>
+        <div className="container mx-auto px-4">
+          <h1
+            className={`text-center text-4xl font-extrabold mb-2 ${
+              mode === 'dark' ? 'text-white' : 'text-black'
+            }`}
+          >
+            Testimonials
+          </h1>
+          <h2
+            className={`text-center text-2xl font-medium mb-12 ${
+              mode === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}
+          >
+            What our <span className="text-pink-500 font-bold">customers</span> are saying
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-8">
+            {testimonials.map((item, i) => (
+              <div
+                key={i}
+                className={`w-full md:w-[30%] bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-lg hover:shadow-pink-400 dark:hover:shadow-pink-600 transition-all duration-300 p-6 text-center border border-pink-100 dark:border-pink-500/10`}
+              >
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-24 h-24 object-cover rounded-full mx-auto mb-6 border-4 border-pink-400"
+                />
+                <p
+                  className={`text-base leading-relaxed ${
+                    mode === 'dark' ? 'text-gray-200' : 'text-gray-700'
+                  }`}
+                >
+                  “{item.text}”
+                </p>
+                <span className="inline-block h-1 w-12 rounded bg-pink-500 mt-6 mb-3" />
+                <h3
+                  className={`font-semibold tracking-wider text-lg ${
+                    mode === 'dark' ? 'text-pink-400' : 'text-pink-600'
+                  }`}
+                >
+                  {item.name}
+                </h3>
+                <p className={`text-sm ${mode === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                  {item.role}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+      </section>
+    </div>
+  );
 }
 
-export default Testimonial
+export default Testimonial;

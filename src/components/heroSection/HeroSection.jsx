@@ -1,11 +1,10 @@
-
 function HeroSection() {
   return (
-    <div>
+    <div className="h-[600px] overflow-hidden flex justify-center">
       <img
-        src="https://urahara-store.com/cdn/shop/collections/new-arrivals-173405.jpg?v=1737614296"
-        alt=""
-        className="h-1/2 w-full object-cover"
+        src="https://images.alphacoders.com/129/1292489.png"
+        alt="hero"
+        className="w-[83%] h-[95%] object-cover rounded-lg"
       />
     </div>
   );
