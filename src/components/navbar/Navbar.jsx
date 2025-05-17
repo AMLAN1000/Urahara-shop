@@ -132,7 +132,7 @@ function Navbar() {
       {/* Top Promo Bar */}
       <div className={`h-10 flex items-center justify-center ${darkStyles ? 'bg-purple-800 text-white' : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'} text-sm font-medium`}>
         <span className="animate-pulse">✨</span>
-        <span className="mx-2">Get free delivery on orders over ₹300</span>
+        <span className="mx-2">Get free delivery on orders over ₹600</span>
         <span className="animate-pulse">✨</span>
       </div>
 
@@ -202,22 +202,7 @@ function Navbar() {
                 {cartItems.length}
               </span>
             </Link>
-
-            {/* User Profile (visible only on desktop) */}
-            {user && (
-              <div className="hidden lg:block">
-                <Link to="/profile" className="relative">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-purple-600 to-pink-500 p-0.5">
-                    <img 
-                      className="w-full h-full rounded-full object-cover border border-white" 
-                      src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg" 
-                      alt="profile" 
-                    />
-                    <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border border-white"></span>
-                  </div>
-                </Link>
-              </div>
-            )}
+            
           </div>
         </div>
       </nav>

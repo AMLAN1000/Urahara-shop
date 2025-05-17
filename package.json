@@ -12,6 +12,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@reduxjs/toolkit": "^1.9.5",
+    "caniuse-lite": "^1.0.30001718",
     "firebase": "^10.1.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
