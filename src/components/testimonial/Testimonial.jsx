@@ -7,15 +7,15 @@ function Testimonial() {
 
   const testimonials = [
     {
-      name: 'Aiko Tanaka',
+      name: 'Dur-e-Fishan',
       role: 'Fashion Enthusiast',
-      image: 'https://randomuser.me/api/portraits/women/68.jpg',
+      image: 'https://cdn.siasat.com/wp-content/uploads/2024/10/durefishan.jpg',
       text: 'I absolutely love shopping from Urahara Shop! The quality of the clothes is amazing, and their anime-inspired collection is just what I’ve always looked for. Definitely my go-to store now!',
     },
     {
-      name: 'Kenta Yamamoto',
+      name: 'Shakib Hasan',
       role: 'Digital Artist',
-      image: 'https://randomuser.me/api/portraits/men/45.jpg',
+      image: 'https://images.unsplash.com/photo-1690037901153-7fd75205941a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmFuZ2xhZGVzaGklMjBib3l8ZW58MHx8MHx8fDA%3D',
       text: 'The customer service is top-notch and the designs are straight out of my favorite series. I wore a shirt from Urahara Shop to a convention and got so many compliments!',
     },
     {
