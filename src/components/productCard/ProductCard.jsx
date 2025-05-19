@@ -40,10 +40,16 @@ function ProductCard() {
 
         <div className="flex flex-wrap -m-4">
           {product
-            .filter((obj) => obj.title.toLowerCase().includes(searchkey))
-            .filter((obj) => obj.category.toLowerCase().includes(filterType))
-            .filter((obj) => obj.price.includes(filterPrice))
-            .map((item, index) => {
+            .filter((obj) =>
+              obj.title.toLowerCase().includes(searchkey.toLowerCase())
+            )
+            .filter((obj) =>
+              obj.category.toLowerCase().includes(filterType.toLowerCase())
+            )
+            .filter((obj) =>
+              obj.price.toString().toLowerCase().includes(filterPrice.toLowerCase())
+            )
+            .map((item) => {
               const { title, price, imageUrl } = item;
 
               return (
@@ -55,8 +61,7 @@ function ProductCard() {
                   <div
                     className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-200 border-opacity-60 rounded-2xl overflow-hidden"
                     style={{
-                      backgroundColor:
-                        mode === 'dark' ? 'rgb(46 49 55)' : '',
+                      backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '',
                       color: mode === 'dark' ? 'white' : '',
                     }}
                   >
