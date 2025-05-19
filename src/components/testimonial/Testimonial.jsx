@@ -27,21 +27,13 @@ function Testimonial() {
   ];
 
   return (
-    <div className={`${mode === 'dark' ? 'bg-[#1b1b1b]' : 'bg-pink-50'} py-16`}>
+    <div className={`${mode === 'dark' ? 'bg-[#1b1b1b]' : 'bg-pink-50'} py-16 transition-colors duration-300`}>
       <section>
         <div className="container mx-auto px-4">
-          <h1
-            className={`text-center text-4xl font-extrabold mb-2 ${
-              mode === 'dark' ? 'text-white' : 'text-black'
-            }`}
-          >
+          <h1 className={`text-center text-4xl font-extrabold mb-2 ${mode === 'dark' ? 'text-white' : 'text-black'}`}>
             Testimonials
           </h1>
-          <h2
-            className={`text-center text-2xl font-medium mb-12 ${
-              mode === 'dark' ? 'text-gray-300' : 'text-gray-600'
-            }`}
-          >
+          <h2 className={`text-center text-2xl font-medium mb-12 ${mode === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
             What our <span className="text-pink-500 font-bold">customers</span> are saying
           </h2>
 
@@ -49,26 +41,18 @@ function Testimonial() {
             {testimonials.map((item, i) => (
               <div
                 key={i}
-                className={`w-full md:w-[30%] bg-black dark:bg-[#1a1a1a] rounded-2xl shadow-lg hover:shadow-pink-400 dark:hover:shadow-pink-600 transition-all duration-300 p-6 text-center border border-pink-100 dark:border-pink-500/10`}
+                className={`w-full md:w-[30%] bg-pink-600 dark:bg-[#131212] rounded-2xl shadow-lg hover:shadow-pink-400 dark:hover:shadow-pink-600 transition-all duration-300 p-6 text-center border border-pink-100 dark:border-pink-500/10`}
               >
                 <img
                   src={item.image}
                   alt={item.name}
                   className="w-24 h-24 object-cover rounded-full mx-auto mb-6 border-4 border-pink-400"
                 />
-                <p
-                  className={`text-base leading-relaxed ${
-                    mode === 'dark' ? 'text-gray-200' : 'text-gray-700'
-                  }`}
-                >
+                <p className={`text-base leading-relaxed ${mode === 'dark' ? 'text-gray-200' : 'text-gray-700'}`}>
                   “{item.text}”
                 </p>
                 <span className="inline-block h-1 w-12 rounded bg-pink-500 mt-6 mb-3" />
-                <h3
-                  className={`font-semibold tracking-wider text-lg ${
-                    mode === 'dark' ? 'text-pink-400' : 'text-pink-600'
-                  }`}
-                >
+                <h3 className={`font-semibold tracking-wider text-lg ${mode === 'dark' ? 'text-white' : 'text-white'}`}>
                   {item.name}
                 </h3>
                 <p className={`text-sm ${mode === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
