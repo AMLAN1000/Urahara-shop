@@ -27,7 +27,7 @@ function Testimonial() {
   ];
 
   return (
-    <div className={`${mode === 'dark' ? 'bg-[#0e0e0e]' : 'bg-pink-50'} py-16`}>
+    <div className={`${mode === 'dark' ? 'bg-[#1b1b1b]' : 'bg-pink-50'} py-16`}>
       <section>
         <div className="container mx-auto px-4">
           <h1
@@ -49,7 +49,7 @@ function Testimonial() {
             {testimonials.map((item, i) => (
               <div
                 key={i}
-                className={`w-full md:w-[30%] bg-white dark:bg-[#1a1a1a] rounded-2xl shadow-lg hover:shadow-pink-400 dark:hover:shadow-pink-600 transition-all duration-300 p-6 text-center border border-pink-100 dark:border-pink-500/10`}
+                className={`w-full md:w-[30%] bg-black dark:bg-[#1a1a1a] rounded-2xl shadow-lg hover:shadow-pink-400 dark:hover:shadow-pink-600 transition-all duration-300 p-6 text-center border border-pink-100 dark:border-pink-500/10`}
               >
                 <img
                   src={item.image}
