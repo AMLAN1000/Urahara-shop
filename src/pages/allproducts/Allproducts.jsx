@@ -101,7 +101,7 @@ function Allproducts() {
                           className="leading-relaxed mb-3"
                           style={{ color: mode === 'dark' ? 'white' : '' }}
                         >
-                          ₹{price}
+                          ৳{price}
                         </p>
 
                         {/* ✅ Add to Cart button now works independently */}

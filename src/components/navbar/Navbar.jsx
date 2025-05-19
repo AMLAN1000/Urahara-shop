@@ -132,7 +132,7 @@ function Navbar() {
       {/* Top Promo Bar */}
       <div className={`h-10 flex items-center justify-center ${darkStyles ? 'bg-purple-800 text-white' : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'} text-sm font-medium`}>
         <span className="animate-pulse">✨</span>
-        <span className="mx-2">Get free delivery on orders over ₹600</span>
+        <span className="mx-2">Get free delivery on orders over ৳600</span>
         <span className="animate-pulse">✨</span>
       </div>
 

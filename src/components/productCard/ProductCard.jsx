@@ -89,7 +89,7 @@ function ProductCard() {
                         className="leading-relaxed mb-3"
                         style={{ color: mode === 'dark' ? 'white' : '' }}
                       >
-                        ₹ {price}
+                        ৳ {price}
                       </p>
                       <div className="flex justify-center">
                         <button

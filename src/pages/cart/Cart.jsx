@@ -106,7 +106,7 @@ function Cart() {
                     <div className="mt-5 sm:mt-0">
                       <h2 className="text-lg font-bold" style={{ color: mode === 'dark' ? 'white' : '' }}>{title}</h2>
                       <p className="text-sm" style={{ color: mode === 'dark' ? 'white' : '' }}>{description}</p>
-                      <p className="mt-1 text-xs font-semibold" style={{ color: mode === 'dark' ? 'white' : '' }}>₹{price}</p>
+                      <p className="mt-1 text-xs font-semibold" style={{ color: mode === 'dark' ? 'white' : '' }}>৳{price}</p>
                     </div>
                     <div onClick={() => deleteCart(item)} className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6 cursor-pointer">
                       <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-red-500 hover:text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -122,16 +122,16 @@ function Cart() {
           <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3" style={{ backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '', color: mode === 'dark' ? 'white' : '' }}>
             <div className="mb-2 flex justify-between">
               <p>Subtotal</p>
-              <p>₹{totalAmout}</p>
+              <p>৳{totalAmout}</p>
             </div>
             <div className="flex justify-between">
               <p>Shipping</p>
-              <p>₹{shipping}</p>
+              <p>৳{shipping}</p>
             </div>
             <hr className="my-4" />
             <div className="flex justify-between mb-3">
               <p className="text-lg font-bold">Total</p>
-              <p className="text-lg font-bold">₹{grandTotal}</p>
+              <p className="text-lg font-bold">৳{grandTotal}</p>
             </div>
 
             {/* Modal for Order Info */}
