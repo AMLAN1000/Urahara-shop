@@ -69,18 +69,14 @@ function Cart() {
       }),
       email: JSON.parse(localStorage.getItem('user')).user.email,
       userid: JSON.parse(localStorage.getItem('user')).user.uid,
-      paymentMethod: 'Bkash (manual)', // or Cash on Delivery
+      paymentMethod: 'Bkash (manual)',
     };
 
     try {
       const orderRef = collection(fireDB, 'order');
       await addDoc(orderRef, orderInfo);
       toast.success('Order placed successfully!');
-
-      // Optionally clear the cart
       cartItems.forEach((item) => dispatch(deleteFromCart(item)));
-
-      // Reset modal form
       setName('');
       setAddress('');
       setPincode('');
@@ -93,48 +89,85 @@ function Cart() {
 
   return (
     <Layout>
-      <div className="h-screen bg-gray-100 pt-5 mb-[60%]" style={{ backgroundColor: mode === 'dark' ? '#282c34' : '', color: mode === 'dark' ? 'white' : '' }}>
+      <div
+        className="min-h-screen bg-gray-100 pt-5 pb-10 px-4 sm:px-6 lg:px-8"
+        style={{
+          backgroundColor: mode === 'dark' ? '#282c34' : '',
+          color: mode === 'dark' ? 'white' : '',
+        }}
+      >
         <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
-        <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
-          <div className="rounded-lg md:w-2/3">
+        <div className="mx-auto max-w-7xl flex flex-col lg:flex-row gap-6">
+          {/* Cart Items */}
+          <div className="flex-1 space-y-6">
             {cartItems.map((item, index) => {
               const { title, price, description, imageUrl } = item;
               return (
-                <div key={index} className="justify-between mb-6 rounded-lg border drop-shadow-xl bg-white p-6 sm:flex sm:justify-start" style={{ backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '', color: mode === 'dark' ? 'white' : '' }}>
-                  <img src={imageUrl} alt="product" className="w-full rounded-lg sm:w-40" />
-                  <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
-                    <div className="mt-5 sm:mt-0">
-                      <h2 className="text-lg font-bold" style={{ color: mode === 'dark' ? 'white' : '' }}>{title}</h2>
-                      <p className="text-sm" style={{ color: mode === 'dark' ? 'white' : '' }}>{description}</p>
-                      <p className="mt-1 text-xs font-semibold" style={{ color: mode === 'dark' ? 'white' : '' }}>৳{price}</p>
-                    </div>
-                    <div onClick={() => deleteCart(item)} className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6 cursor-pointer">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-red-500 hover:text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </div>
+                <div
+                  key={index}
+                  className="flex flex-col sm:flex-row items-center justify-between rounded-lg border drop-shadow-xl bg-white p-4 sm:p-6 gap-4"
+                  style={{
+                    backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '',
+                    color: mode === 'dark' ? 'white' : '',
+                  }}
+                >
+                  <img
+                    src={imageUrl}
+                    alt="product"
+                    className="w-full sm:w-32 md:w-40 rounded-lg"
+                  />
+                  <div className="flex-1 sm:ml-4 w-full">
+                    <h2 className="text-lg font-bold">{title}</h2>
+                    <p className="text-sm">{description}</p>
+                    <p className="mt-1 text-sm font-semibold">৳{price}</p>
+                  </div>
+                  <div
+                    onClick={() => deleteCart(item)}
+                    className="cursor-pointer text-red-500 hover:text-red-700"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-6 h-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          <div className="mt-6 h-full rounded-lg border bg-white p-6 shadow-md md:mt-0 md:w-1/3" style={{ backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '', color: mode === 'dark' ? 'white' : '' }}>
-            <div className="mb-2 flex justify-between">
+          {/* Cart Summary & Modal */}
+          <div
+            className="w-full lg:w-1/3 rounded-lg border bg-white p-6 shadow-md"
+            style={{
+              backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '',
+              color: mode === 'dark' ? 'white' : '',
+            }}
+          >
+            <div className="mb-4 flex justify-between">
               <p>Subtotal</p>
               <p>৳{totalAmout}</p>
             </div>
-            <div className="flex justify-between">
+            <div className="flex justify-between mb-4">
               <p>Shipping</p>
               <p>৳{shipping}</p>
             </div>
             <hr className="my-4" />
-            <div className="flex justify-between mb-3">
+            <div className="flex justify-between mb-6">
               <p className="text-lg font-bold">Total</p>
               <p className="text-lg font-bold">৳{grandTotal}</p>
             </div>
 
-            {/* Modal for Order Info */}
+            {/* Modal for checkout form */}
             <Modal
               name={name}
               address={address}
