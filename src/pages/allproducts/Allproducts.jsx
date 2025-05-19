@@ -61,7 +61,7 @@ function Allproducts() {
               )
               .filter((obj) => obj.price.toString().includes(filterPrice))
               .map((item, index) => {
-                const { title, price, imageUrl, id } = item
+                const { title, price, imageUrl } = item
                 return (
                   <div key={index} className="p-4 md:w-1/4 drop-shadow-lg">
                     <div
@@ -71,17 +71,12 @@ function Allproducts() {
                         color: mode === 'dark' ? 'white' : ''
                       }}
                     >
-                      {/* ✅ Only image links to product info */}
-                      <div
-                        className="flex justify-center cursor-pointer"
-                        onClick={() =>
-                          (window.location.href = `/productinfo/${id}`)
-                        }
-                      >
+                      {/* ❌ Removed link to product info */}
+                      <div className="flex justify-center">
                         <img
-                          className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110 duration-300 ease-in-out"
+                          className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition duration-300 ease-in-out"
                           src={imageUrl}
-                          alt="product"
+                          alt={title}
                         />
                       </div>
                       <div className="p-5 border-t-2">
@@ -104,7 +99,6 @@ function Allproducts() {
                           ৳{price}
                         </p>
 
-                        {/* ✅ Add to Cart button now works independently */}
                         <div className="flex justify-center">
                           <button
                             type="button"

@@ -55,8 +55,8 @@ function ProductCard() {
               return (
                 <div
                   key={item.id}
-                  onClick={() => navigate(`/productinfo/${item.id}`)}
-                  className="p-4 md:w-1/4 drop-shadow-lg"
+                  
+                  className="p-4 md:w-1/4 drop-shadow-lg cursor-pointer"
                 >
                   <div
                     className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-200 border-opacity-60 rounded-2xl overflow-hidden"
@@ -65,9 +65,9 @@ function ProductCard() {
                       color: mode === 'dark' ? 'white' : '',
                     }}
                   >
-                    <div className="flex justify-center cursor-pointer">
+                    <div className="flex justify-center">
                       <img
-                        className="rounded-2xl w-full h-80 p-2 hover:scale-110 transition duration-300 ease-in-out"
+                        className="rounded-2xl w-full h-80 p-2"
                         src={imageUrl}
                         alt={title}
                       />
