@@ -24,7 +24,6 @@ function Footer() {
             <ul className="space-y-2">
               <li><Link to="/" className="hover:underline">Home</Link></li>
               <li><Link to="/order" className="hover:underline">Order</Link></li>
-              <li><Link to="/local" className="hover:underline">Local For Vocal</Link></li>
               <li><Link to="/cart" className="hover:underline">Cart</Link></li>
             </ul>
           </div>
