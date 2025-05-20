@@ -61,7 +61,7 @@ function Order() {
                           
                           <div className="mt-4 flex items-end justify-between">
                             <div className={`text-lg font-medium ${isDark ? 'text-green-400' : 'text-green-600'}`}>
-                              ${item.price}
+                              ৳{item.price}
                             </div>
                             <div className="flex space-x-2">
                               <span className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${isDark ? 'bg-blue-900 text-blue-200' : 'bg-blue-100 text-blue-800'}`}>
